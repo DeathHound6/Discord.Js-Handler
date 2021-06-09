@@ -1,0 +1,31 @@
+{
+    "name": "@deathhound/discord-handler",
+    "version": "1.0.0",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "test": "node test/index.js"
+    },
+    "dependencies": {
+        "discord.js": "^12.5.3",
+        "require-all": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^15.6.1"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "DeathHound6"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DeathHound6/Discord.Js-Handler.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DeathHound6/Discord.Js-Handler/issues"
+    },
+    "homepage": "https://github.com/DeathHound6/Discord.Js-Handler#README",
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
