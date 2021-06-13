@@ -53,7 +53,7 @@ declare module "discord.js-handler" {
         public eventHandler: EventHandler;
         public commandHandler: CommandHandler;
         public prefix: String;
-        public options: Object;
+        public clientOptions: Object;
     }
     export const Version: String;
 
