@@ -64,7 +64,11 @@ declare module "discord.js-handler" {
     interface HandlerOptions {
         prefix: String | "!";
         commandEditTime: Number | 30000;
-        owner?: String | String[]
+        owner: String | String[] | ""
+        defaults: {
+            events: Boolean | true;
+            commands: Boolean | true;
+        }
     }
 
     export class Util {
