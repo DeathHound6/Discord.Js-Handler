@@ -1,5 +1,5 @@
 # Discord-Handler
-An NPM package to handle Commands and Events. Compatible with Discord.Js (v12)
+An NPM package to handle Commands and Events. Compatible with Discord.Js (v12-v13)
 
 ## Installation
 `npm i @deathhound/discord-handler`
