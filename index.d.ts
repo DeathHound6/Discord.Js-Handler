@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from "discord.js";
+import { Client, ClientOptions, Collection, Message } from "discord.js";
 import * as EventEmitter from "events";
 
 declare module "discord.js-handler" {
@@ -9,6 +9,7 @@ declare module "discord.js-handler" {
     }
     class CommandHandler extends BaseHandler {
         constructor(client: HandlerClient);
+        private _commands: Collection<string, (typeof Command)>;
         public registerCommands(commands: (typeof Command)[]): CommandHandler;
         public registerCommandsIn(commandsDirPath: String): CommandHandler;
     }
@@ -28,12 +29,15 @@ declare module "discord.js-handler" {
         public name: String;
         public description: String;
         public aliases: String[];
+        private Run(...args: any[]): void;
+        public run(message: Message): void;
     }
     export class Event extends Base {
         constructor(client: HandlerClient, options: EventOptions);
         public name: String;
         public emitter: EventEmitter;
         public emit: String;
+        private run(...args: any[]): void;
     }
 
     interface CommandOptions {
@@ -61,5 +65,9 @@ declare module "discord.js-handler" {
         prefix: String | "!";
         commandEditTime: Number | 30000;
         owner?: String | String[]
+    }
+
+    export class Util {
+        public static isConstructor(Function: Function, Class: Object): Boolean;
     }
 }
