@@ -50,6 +50,7 @@ An NPM package to handle Commands and Events. Compatible with Discord.Js (v12-v1
 - `aliases` (String[]) - A String array containing Command Alias names
 - `client` (HandlerClient) - The Client this command is registered with
 ##### Methods
+`Run(message, args): void` 
 `run(): any` - Run the command (on the base Command, this will throw an error. You should overwrite this method in extended classes)
 
 #### Event
@@ -70,7 +71,10 @@ An NPM package to handle Commands and Events. Compatible with Discord.Js (v12-v1
 ##### Properties
 - `prefix` (String) - Command prefix. Defaults to `!`
 - `commandEditTime` (Number) - Length of time after sending a message it can be edited to run a command. Defaults to `30000`
-- `owner` (String | String[]) - Owner ID or array of owner IDs
+- `owner` (String | String[]) - Owner ID or array of owner IDs. Defaults to `""`
+- `defaults` (Object) 
+    - `events` (Boolean) - Whether default events should be listened to. Defaults to `true`
+    - `commands` (Boolean) - Whether default commands should be loaded. Defaults to `true`
 
 #### CommandOptions
 - Type: `object`
@@ -84,4 +88,4 @@ An NPM package to handle Commands and Events. Compatible with Discord.Js (v12-v1
 ##### Propeties
 - `name` (String) - The event name
 - `emit` (String) - When this event should be run (possible values are 'on' or 'once')
-- `emitter` (EventEmitter) - The object that will emit the event (usually will be the Client)
+- `emitter` (EventEmitter) - The object that will emit the event (usually will be the Client). Defaults to the current HandlerClient
